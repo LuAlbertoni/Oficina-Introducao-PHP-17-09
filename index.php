@@ -10,7 +10,7 @@
 
 <body>
     <?php
-    // ----------------------- Parte 1 HTML -----------------------
+    // ----------------------- Parte 1 -----------------------
 
     // $idade = 19;
     // $altura = 1.73;
@@ -30,33 +30,73 @@
     // else
     //     $email = 'exemplo@mail.com';
 
-    // ----------------------- Parte 2 HTML -----------------------
+    // ----------------------- Parte 2 -----------------------
 
-    $resultado = 0;
-    $op;
+    // $resultado = 0;
+    // $op;
 
-    if (isset($_GET["operacao"]))
-        $op = $_GET['operacao'];
+    // if (isset($_GET["operacao"]))
+    //     $op = $_GET['operacao'];
 
-    switch ($op) {
-        case 1:
-            $resultado = $_GET['numero'] * 2;
-            break;
+    // switch ($op) {
+    //     case 1:
+    //         $resultado = $_GET['numero'] * 2;
+    //         break;
 
-        case 2:
-            $resultado = pow($_GET['numero'], 2);
-            break;
+    //     case 2:
+    //         $resultado = pow($_GET['numero'], 2);
+    //         break;
 
-        case 3:
-            $resultado = sqrt($_GET['numero']);
-            break;
+    //     case 3:
+    //         $resultado = sqrt($_GET['numero']);
+    //         break;
 
-        default:
-            $resultado = 'Não foi escolhido um tipo';
-    }
+    //     default:
+    //         $resultado = 'Não foi escolhido um tipo';
+    // }
+
+    // ----------------------- Parte 3 -----------------------
+
+    $carros = ['Gol', 'Fiesta', 'Fit', 'Uno'];
+
+    for ($i = 0; $i < sizeof($carros); $i++) {
     ?>
+        <ul>
+            <li><?= $carros[$i] ?></li>
+        </ul>
+    <?php
+    }
 
-    <!-- <div id="Parte_1"> -->
+    $i = 0;
+
+    while ($i < sizeof($carros)) {
+    ?>
+        <ul>
+            <li><?= $carros[$i] ?></li>
+        </ul>
+    <?php
+        $i++;
+    }
+
+    for($i = 0; $i < sizeof(($carros)); $i++) {
+        echo "<tr><td>".$carros[$i]."</td></tr>";
+    }
+
+    foreach($carros as $modelo) {
+        echo "<tr><td>".$modelo."</td></tr>";
+    }
+
+    foreach($carros as $key => $modelo) {
+        ?>
+        <tr>
+            <td><?= $modelo?></td>
+            <td><?= $key?></td>
+        </tr>
+        <?php
+    }
+
+    ?>
+    <!-- ----------------------- Parte 1 ----------------------- -->
     <!-- <h1>Olá <?= $nome ?></h1>
     <p>Minha idade é <?= $idade ?> e minha altura <?= $altura ?></p>
     <p>Seu email é <?= $email ?></p>
@@ -72,10 +112,9 @@
         <input name="email" id="email" />
         <input type="submit" value="Enviar" />
     </form> -->
-    <!-- </div> -->
 
-    <!-- <div id="Parte_2"> -->
-    <form method="GET">
+    <!-- ----------------------- Parte 2 ----------------------- -->
+    <!-- <form method="GET">
         <label id="numero">Número</label>
         <input name="numero" id="numero" type="number" />
         <input type="radio" value="1" id="dobro" name="operacao" />
@@ -87,8 +126,10 @@
         <input type="submit" value="Enviar" />
     </form>
 
-    <p>Resultado <?= $resultado ?></p>
-    <!-- </div> -->
+    <p>Resultado <?= $resultado ?></p> -->
+
+    <!-- ----------------------- Parte 3 ----------------------- -->
+
 </body>
 
 </html>
