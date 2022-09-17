@@ -44,11 +44,11 @@
             break;
 
         case 2:
-            $resultado = pow($GET['numero'], 2);
+            $resultado = pow($_GET['numero'], 2);
             break;
 
         case 3:
-            $resultado = sqrt($GET['numero'], 2);
+            $resultado = sqrt($_GET['numero']);
             break;
 
         default:
